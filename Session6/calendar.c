@@ -35,7 +35,49 @@ input: monthNumber as integer represent the given month,
 output: characer of that month
 ex: input: 1; output: "Janurary"
 */
-char* getMonthName(int monthNumber);
+char* getMonthName(int monthNumber){
+    switch(monthNumber){
+        case 1:
+            return "January";
+            break;
+        case 2:
+            return "February";
+            break;
+        case 3:
+            return "March";
+            break;
+        case 4:
+            return "April";
+            break;
+        case 5:
+            return "May";
+            break;
+        case 6:
+            return "June";
+            break;
+        case 7:
+            return "July";
+            break;
+        case 8:
+            return "August";
+            break;
+        case 9:
+            return "September";
+            break;
+        case 10:
+            return "October";
+            break;
+        case 11:
+            return "November";
+            break;
+        case 2:
+            return "December";
+            break;
+        default:
+            print("Invalid input");
+
+    }
+}
 
 /*
  Function to return the number of days for each month
@@ -45,7 +87,38 @@ char* getMonthName(int monthNumber);
  Hint: Find out how to calculate the leap year, so that your feburary is correct
  ex: input: 2, 2016; output: 29
 */
-int numberOfDays(int monthNumber, int year);
+int numberOfDays(int monthNumber, int year){
+    switch (monthNumber){
+    case 1:
+        return 31;
+    case 2:
+        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)){
+            return 29;
+        } else {
+            return 28;
+        }
+    case 3:
+        return 31;
+    case 4:
+        return 30;
+    case 5:
+        return 31;
+    case 6:
+        return 30;
+    case 7:
+        return 31;
+    case 8:
+        return 31;
+    case 9:
+        return 30;
+    case 10:
+        return 31;
+    case 11:
+        return 30;
+    case 12:
+        return 31;
+    }
+}
 
 /*
  Function to print the calendar of the given year
